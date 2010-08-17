@@ -2776,7 +2776,7 @@ If REVISION is a remote branch, offer to create a local tracking branch.
 
 (defun magit-read-create-branch-args ()
   (let* ((cur-branch (magit-get-current-branch))
-	 (branch (read-string "Create branch: "))
+	 (branch (magit-read-rev "Create branch: " (magit-default-rev)))
 	 (parent (magit-read-rev "Parent" cur-branch)))
     (list branch parent)))
 
